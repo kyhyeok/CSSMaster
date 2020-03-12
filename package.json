@@ -1,0 +1,19 @@
+{
+  "name": "CSSMaster",
+  "version": "1.0.0",
+  "description": "CssMasterClassWithNomadCoder",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyhyeok/CSSMaster.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyhyeok/CSSMaster/issues"
+  },
+  "homepage": "https://github.com/kyhyeok/CSSMaster#readme",
+  "scripts": {
+    "start": "parcel index.html"
+  }
+}
