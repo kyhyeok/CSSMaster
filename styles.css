@@ -1,3 +1,58 @@
-body {
-  background-color: red;
+/* 
+li:matches(:nth-child(even), .target) {
+  background-color: blue;
+}
+li:not(.target) {
+    background-color: blue;
+}   
+ 
+
+:root {
+    --awesomeColor: #e74c3c;
+}
+
+li:first-child a {
+    color: var(--awesomeColor);
+}
+
+@custom-selector :--headers h1, h2, h3, h4, h5, h6;
+
+:--headers {
+    color: #8e44ad;
+}
+
+
+@custom-media --ipad-size (450px <= width < 850px);
+
+@media (--ipad-size) {
+    body {
+        background-color: red;
+    }
+}
+
+*/
+
+/*
+main section {
+이렇게 하는 것을
+}
+*/
+
+main {
+  background-color: blue;
+  & section {
+    background-color: red;
+    width: 500px;
+    /* 요렇게 할 수 있다. */
+    & li {
+      background-color: yellow;
+      width: 400px;
+      & a {
+        color: black;
+        &:hover {
+          color: gray;
+        }
+      }
+    }
+  }
 }

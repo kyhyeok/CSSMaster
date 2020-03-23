@@ -106,6 +106,72 @@ npm init -y scripts에서 test 지우고
 
 npm install -g parcel-bundler 해서 설치하고
 
-index.html 파일 만들고 styles.css만들고
+index.html 파일 만들고 styles.css만들고 시작
+
+.gitignore를 만들어서 gitgub에 올리고 싶지 않을 파일들을 관리하자
+
+npm install postcss-preset-env 설치 후 package.json에
+
+"postcss" : {"plugins": {"postcss-preset-env": {"stage":0}}}
+
+postcss에 plugins에 postcss-preset-env에 stage0을 사용하는 것
 
 # =========================== PostCSS 끝 ===========================
+
+# =========================== css 시작 ===========================
+
+li:matches(:nth-child(even), .target) {
+
+background-color: blue;
+
+}
+짝수와 클래스 이름이 target인 클래스들만 적용된다.
+
+li:not(.target) {
+
+background-color: blue;
+
+}
+not은 그 클래스 제외 꼭 클래스 뿐이 아니라 다른 것도 적용 되는지는 모르겠다.
+
+CSS Variables를 설정하려면 :root{--awesomeColor: 색} 안에 명시 후
+
+적용할 css {color: var(--awesomeColor)}
+
+색 뿐 아니라 border나 font등등 미리 설정을 한 뒤 사용해도 괜찮다
+
+CSS Variables를 설정하려면 :root{--awesomeBorder: 1pl solid black} 안에 명시 후
+
+적용할 css {border: var(--awesomeColor)}처럼 사용해도 된다.
+
+@custom-selector는 variable을 구체화 하는 것이다. tag에 한 번에 사용 가능
+
+@custom-selector :--headers h1, h2, h3, h4, h5, h6;
+
+:--headers {
+
+color: #8e44ad;
+
+}
+
+custom selector만 있는 파일을 가질 수 있다.
+
+@custom-media --ipad-size (max-width: 850px);
+
+@custom-media --ipad-size (450px <= width < 850px); and는 이 형식으로 사용 가능하다
+
+@media (--ipad-size) {}로 사용 가능 하다
+
+color: color-mod(#f1c40f alpha(50%)) 하면 투명도가 50% 나온다
+
+system-ui 지금 컴퓨터에 설치되어 있는 font을 사용 할 수 있다.
+
+그 밖에 많이 쓸수 있는 function들이 있다.
+
+nesting은 css의 selector의 반복을 줄여준다.
+
+main section, main section li, main section li a 이런식으로 따로따로 해야 하는 것을
+
+main & section & li & a 이런식으로 한번에 해 준다.
+
+# =========================== css 끝 ===========================
